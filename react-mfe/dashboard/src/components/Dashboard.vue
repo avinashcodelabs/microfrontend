@@ -253,20 +253,20 @@
 </template>
 
 <script>
-import 'primevue/resources/themes/saga-blue/theme.css';
-import 'primevue/resources/primevue.css';
-import 'primeflex/primeflex.css';
-import 'primeicons/primeicons.css';
+import "primevue/resources/themes/saga-blue/theme.css";
+import "primevue/resources/primevue.css";
+import "primeflex/primeflex.css";
+import "primeicons/primeicons.css";
 
-import Checkbox from 'primevue/checkbox';
-import Panel from 'primevue/panel';
-import Dropdown from 'primevue/dropdown';
-import InputText from 'primevue/inputtext';
-import Button from 'primevue/button';
-import Column from 'primevue/column';
-import DataTable from 'primevue/datatable';
-import Chart from 'primevue/chart';
-import ProgressBar from 'primevue/progressbar';
+import Checkbox from "primevue/checkbox";
+import Panel from "primevue/panel";
+import Dropdown from "primevue/dropdown";
+import InputText from "primevue/inputtext";
+import Button from "primevue/button";
+import Column from "primevue/column";
+import DataTable from "primevue/datatable";
+import Chart from "primevue/chart";
+import ProgressBar from "primevue/progressbar";
 
 export default {
   components: {
@@ -284,19 +284,19 @@ export default {
     return {
       tasksCheckbox: [],
       dropdownCities: [
-        { name: 'New York', code: 'NY' },
-        { name: 'Rome', code: 'RM' },
-        { name: 'London', code: 'LDN' },
-        { name: 'Istanbul', code: 'IST' },
-        { name: 'Paris', code: 'PRS' },
+        { name: "New York", code: "NY" },
+        { name: "Rome", code: "RM" },
+        { name: "London", code: "LDN" },
+        { name: "Istanbul", code: "IST" },
+        { name: "Paris", code: "PRS" },
       ],
       dropdownCity: null,
       options: {
-        defaultDate: '2019-01-01',
+        defaultDate: "2019-01-01",
         header: {
-          left: 'prev,next',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay',
+          left: "prev,next",
+          center: "title",
+          right: "dayGridMonth,timeGridWeek,timeGridDay",
         },
         editable: true,
       },
@@ -305,28 +305,28 @@ export default {
       selectedProducts: null,
       lineData: {
         labels: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
         ],
         datasets: [
           {
-            label: 'First Dataset',
+            label: "First Dataset",
             data: [65, 59, 80, 81, 56, 55, 40],
             fill: false,
-            backgroundColor: '#2f4860',
-            borderColor: '#2f4860',
+            backgroundColor: "#2f4860",
+            borderColor: "#2f4860",
           },
           {
-            label: 'Second Dataset',
+            label: "Second Dataset",
             data: [28, 48, 40, 19, 86, 27, 90],
             fill: false,
-            backgroundColor: '#00bb7e',
-            borderColor: '#00bb7e',
+            backgroundColor: "#00bb7e",
+            borderColor: "#00bb7e",
           },
         ],
       },
@@ -334,108 +334,67 @@ export default {
   },
   methods: {
     formatCurrency(value) {
-      return value.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD',
+      return value.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
       });
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 @media screen and (max-width: 960px) {
-  ::v-deep(.p-datatable) {
-    &.p-datatable-customers {
-      .p-datatable-thead > tr > th,
-      .p-datatable-tfoot > tr > td {
-        display: none !important;
-      }
-
-      .p-datatable-tbody > tr {
-        border-bottom: 1px solid #dee2e6;
-        > td {
-          text-align: left;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: 0 none !important;
-          width: 100% !important;
-          float: left;
-          clear: left;
-          border: 0 none;
-
-          .p-column-title {
-            padding: 0.4rem;
-            min-width: 30%;
-            display: inline-block;
-            margin: -0.4rem 1rem -0.4rem -0.4rem;
-            font-weight: bold;
-          }
-
-          .p-progressbar {
-            margin-top: 0.5rem;
-          }
-        }
-      }
-    }
+  ::v-deep(.p-datatable).p-datatable-customers .p-datatable-thead > tr > th,
+  ::v-deep(.p-datatable).p-datatable-customers .p-datatable-tfoot > tr > td {
+    display: none !important;
+  }
+  ::v-deep(.p-datatable).p-datatable-customers .p-datatable-tbody > tr {
+    border-bottom: 1px solid #dee2e6;
+  }
+  ::v-deep(.p-datatable).p-datatable-customers .p-datatable-tbody > tr > td {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0 none !important;
+    width: 100% !important;
+    float: left;
+    clear: left;
+    border: 0 none;
+  }
+  ::v-deep(.p-datatable).p-datatable-customers
+    .p-datatable-tbody
+    > tr
+    > td
+    .p-column-title {
+    padding: 0.4rem;
+    min-width: 30%;
+    display: inline-block;
+    margin: -0.4rem 1rem -0.4rem -0.4rem;
+    font-weight: bold;
+  }
+  ::v-deep(.p-datatable).p-datatable-customers
+    .p-datatable-tbody
+    > tr
+    > td
+    .p-progressbar {
+    margin-top: 0.5rem;
   }
 }
-$fontSize: 14px;
-$bodyBgColor: #edf0f5;
-$textColor: #333333;
-$textSecondaryColor: #707070;
-$borderRadius: 3px;
-$dividerColor: #e3e3e3;
-$transitionDuration: 0.2s;
-$maskBgColor: #424242;
-$focusShadowColor: #8dcdff;
-
 /* Menu Common */
-$menuitemBadgeBgColor: #007be5;
-$menuitemBadgeColor: #ffffff;
-$submenuFontSize: 13px;
-$menuitemActiveRouteColor: #1fa1fc;
-
 /* Menu Light */
-$menuBgColorFirst: #f3f4f9;
-$menuBgColorLast: #d7dbe8;
-$menuitemColor: #232428;
-$menuitemHoverColor: #0388e5;
-$menuitemActiveColor: #0388e5;
-$menuitemActiveBgColor: #ffffff;
-$menuitemBorderColor: rgba(207, 211, 224, 0.6);
-
 /* Menu Dark */
-$menuDarkBgColorFirst: #4d505b;
-$menuDarkBgColorLast: #3b3e47;
-$menuitemDarkColor: #ffffff;
-$menuitemDarkHoverColor: #0388e5;
-$menuitemDarkActiveColor: #0388e5;
-$menuitemDarkActiveBgColor: #2e3035;
-$menuitemDarkBorderColor: rgba(52, 56, 65, 0.6);
-
 /* Topbar */
-$topbarLeftBgColor: #0388e5;
-$topbarRightBgColor: #07bdf4;
-$topbarItemBadgeBgColor: #ef6262;
-$topbarItemBadgeColor: #ffffff;
-$topbarItemColor: #ffffff;
-$topbarItemHoverColor: #c3e8fb;
-$topbarSearchInputBorderBottomColor: #ffffff;
-$topbarSearchInputColor: #ffffff;
-
 .card {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 1em;
   margin-bottom: 16px;
-  border-radius: $borderRadius;
-
-  &.card-w-title {
-    padding-bottom: 2em;
-  }
+  border-radius: 3px;
 }
-
+.card.card-w-title {
+  padding-bottom: 2em;
+}
 h1,
 h2,
 h3,
@@ -447,306 +406,226 @@ h6 {
   font-weight: normal;
   line-height: 1.2;
   color: inherit;
-
-  &:first-child {
-    margin-top: 0;
-  }
 }
-
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
 h1 {
   font-size: 2.5rem;
 }
-
 h2 {
   font-size: 2rem;
 }
-
 h3 {
   font-size: 1.75rem;
 }
-
 h4 {
   font-size: 1.5rem;
 }
-
 h5 {
   font-size: 1.25rem;
 }
-
 h6 {
   font-size: 1rem;
-}
-@mixin icon-override($icon) {
-  &:before {
-    content: $icon;
-  }
-}
-
-@mixin linear-gradient($top, $bottom) {
-  background: $top; /* Old browsers */
-  background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-}
-
-@mixin linear-gradient-left($left, $right) {
-  background: $left; /* Old browsers */
-  background: linear-gradient(to right, $left 0%, $right 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$left, endColorstr=$right,GradientType=1 ); /* IE6-9 */
-}
-
-@mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie);
-}
-
-@mixin focused() {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: 0 0 0 0.2em $focusShadowColor;
-}
-
-@mixin focused-inset() {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 0.2em $focusShadowColor;
-}
-
-@mixin clearfix {
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
 }
 mark {
   background: #fff8e1;
   padding: 0.25rem 0.4rem;
-  border-radius: $borderRadius;
+  border-radius: 3px;
   font-family: monospace;
 }
-
 blockquote {
   margin: 1rem 0;
   padding: 0 2rem;
   border-left: 4px solid #90a4ae;
 }
-
 hr {
-  border-top: solid $dividerColor;
+  border-top: solid #e3e3e3;
   border-width: 1px 0 0 0;
   margin: 1rem 0;
 }
-
 p {
   margin: 0 0 1rem 0;
   line-height: 1.5;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
-
+p:last-child {
+  margin-bottom: 0;
+}
 /* Code Highlight */
-.docs {
-  pre[class*='language-'] {
-    padding: 0 !important;
-    background: transparent;
-    overflow: visible;
-
-    > code {
-      border-left: 0 none;
-      box-shadow: none !important;
-      font-size: 14px;
-    }
-  }
+.docs pre[class*="language-"] {
+  padding: 0 !important;
+  background: transparent;
+  overflow: visible;
+}
+.docs pre[class*="language-"] > code {
+  border-left: 0 none;
+  box-shadow: none !important;
+  font-size: 14px;
 }
 /* Footer */
-$footerBgColor: #ffffff;
 .dashboard {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
     Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   background-color: #edf0f5;
-  .summary {
-    position: relative;
-
-    .title {
-      font-size: 20px;
-    }
-
-    .detail {
-      color: $textSecondaryColor;
-      display: block;
-      margin-top: 10px;
-    }
-
-    .count {
-      color: #ffffff;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      padding: 7px 14px;
-      border-radius: $borderRadius;
-
-      &.visitors {
-        background-color: #20d077;
-      }
-
-      &.purchases {
-        background-color: #f9c851;
-      }
-
-      &.revenue {
-        background-color: #007be5;
-      }
-    }
-  }
-
-  .highlight-box {
-    height: 100px;
-    display: flex;
-    @include clearfix();
-
-    .initials {
-      height: 100%;
-      width: 50%;
-      text-align: center;
-      padding: 1em;
-
-      > span {
-        font-size: 48px;
-      }
-    }
-
-    .highlight-details {
-      height: 100%;
-      background-color: #ffffff;
-      width: 50%;
-      padding: 1em;
-
-      i {
-        font-size: 18px;
-        vertical-align: middle;
-        margin-right: 0.5em;
-      }
-
-      .count {
-        color: $textSecondaryColor;
-        font-size: 36px;
-        margin-top: 4px;
-        display: block;
-      }
-    }
-  }
-
-  .task-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      padding: 0.5em 0.25em;
-      border-bottom: 1px solid $dividerColor;
-      @include clearfix();
-    }
-
-    .p-checkbox {
-      vertical-align: middle;
-      margin-right: 0.5em;
-    }
-
-    .task-name {
-      vertical-align: middle;
-    }
-
-    i {
-      float: right;
-      font-size: 24px;
-      color: $textSecondaryColor;
-    }
-
-    .p-panel-content {
-      min-height: 256px;
-    }
-  }
-
-  .contact-form {
-    .p-panel-content {
-      min-height: 256px;
-    }
-  }
-
-  .contacts {
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        border-bottom: 1px solid $dividerColor;
-
-        button {
-          padding: 9px;
-          width: 100%;
-          box-sizing: border-box;
-          text-decoration: none;
-          position: relative;
-          display: block;
-          border-radius: 2px;
-          transition: background-color 0.2s;
-
-          .name {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            font-size: 18px;
-          }
-
-          .email {
-            position: absolute;
-            right: 10px;
-            top: 30px;
-            font-size: 14px;
-            color: $textSecondaryColor;
-          }
-
-          &:hover {
-            cursor: pointer;
-            background-color: #eeeeee;
-          }
-        }
-
-        &:last-child {
-          border: 0;
-        }
-      }
-    }
-
-    .p-panel-content {
-      min-height: 256px;
-    }
-  }
-
-  .activity-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      border-bottom: 1px solid $dividerColor;
-      padding: 16px 8px;
-
-      .count {
-        font-size: 24px;
-        color: #ffffff;
-        background-color: #007be5;
-        font-weight: 700;
-        padding: 0.25em 0.5em;
-        display: inline-block;
-        border-radius: $borderRadius;
-      }
-    }
-  }
+}
+.dashboard .summary {
+  position: relative;
+}
+.dashboard .summary .title {
+  font-size: 20px;
+}
+.dashboard .summary .detail {
+  color: #707070;
+  display: block;
+  margin-top: 10px;
+}
+.dashboard .summary .count {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  padding: 7px 14px;
+  border-radius: 3px;
+}
+.dashboard .summary .count.visitors {
+  background-color: #20d077;
+}
+.dashboard .summary .count.purchases {
+  background-color: #f9c851;
+}
+.dashboard .summary .count.revenue {
+  background-color: #007be5;
+}
+.dashboard .highlight-box {
+  height: 100px;
+  display: flex;
+}
+.dashboard .highlight-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.dashboard .highlight-box .initials {
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  padding: 1em;
+}
+.dashboard .highlight-box .initials > span {
+  font-size: 48px;
+}
+.dashboard .highlight-box .highlight-details {
+  height: 100%;
+  background-color: #fff;
+  width: 50%;
+  padding: 1em;
+}
+.dashboard .highlight-box .highlight-details i {
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+.dashboard .highlight-box .highlight-details .count {
+  color: #707070;
+  font-size: 36px;
+  margin-top: 4px;
+  display: block;
+}
+.dashboard .task-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.dashboard .task-list li {
+  padding: 0.5em 0.25em;
+  border-bottom: 1px solid #e3e3e3;
+}
+.dashboard .task-list li:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.dashboard .task-list .p-checkbox {
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+.dashboard .task-list .task-name {
+  vertical-align: middle;
+}
+.dashboard .task-list i {
+  float: right;
+  font-size: 24px;
+  color: #707070;
+}
+.dashboard .task-list .p-panel-content {
+  min-height: 256px;
+}
+.dashboard .contact-form .p-panel-content {
+  min-height: 256px;
+}
+.dashboard .contacts ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.dashboard .contacts ul li {
+  border-bottom: 1px solid #e3e3e3;
+}
+.dashboard .contacts ul li button {
+  padding: 9px;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+.dashboard .contacts ul li button .name {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 18px;
+}
+.dashboard .contacts ul li button .email {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  font-size: 14px;
+  color: #707070;
+}
+.dashboard .contacts ul li button:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+.dashboard .contacts ul li:last-child {
+  border: 0;
+}
+.dashboard .contacts .p-panel-content {
+  min-height: 256px;
+}
+.dashboard .activity-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.dashboard .activity-list li {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 16px 8px;
+}
+.dashboard .activity-list li .count {
+  font-size: 24px;
+  color: #fff;
+  background-color: #007be5;
+  font-weight: 700;
+  padding: 0.25em 0.5em;
+  display: inline-block;
+  border-radius: 3px;
 }
 </style>
